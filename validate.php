@@ -84,6 +84,7 @@ function validateID($id)
 
 <body>
     <h1>身份證號碼驗證</h1>
+    <h1>問題出在權重計算要算英文字母的兩位數，而檢查碼不能計算權重</h1>
     <form method="post">
         <label for="idNumber">輸入身份證代號: </label>
         <input type="text" id="idNumber" name="idNumber" required>

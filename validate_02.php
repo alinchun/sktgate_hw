@@ -43,7 +43,7 @@ function validateID($id)
 	} else {
 		// 如果地區字母符合參照表，將地區字母轉換為數字，並更改$id資料
 		$id = $area_codes[$first_char] . substr($id, 1, 9);
-		// echo $id."<br>";
+		echo $id."<br>";
 		// var_dump($id);
 	}
 	// 驗證性別
@@ -56,14 +56,14 @@ function validateID($id)
 	$checksum = 0;
 	for ($i = 0; $i <= 9; $i++) {
 		$checksum += intval($id[$i]) * $weight_factors[$i];
-		// echo "<br>";
-		// echo intval($id[$i]);
-		// echo "*";
-		// echo $weight_factors[$i];
-		// echo "=";
-		// echo intval($id[$i]) * $weight_factors[$i];
-		// echo "(" . $checksum . ")";
-		// echo "<br>";
+		echo "<br>";
+		echo intval($id[$i]);
+		echo "*";
+		echo $weight_factors[$i];
+		echo "=";
+		echo intval($id[$i]) * $weight_factors[$i];
+		echo "(" . $checksum . ")";
+		echo "<br>";
 	}
 
 	$remainder = $checksum % 10;
@@ -74,7 +74,7 @@ function validateID($id)
 	}
 
 	$isValid = $checksum_digit === intval($id[10]);
-	// var_dump($isValid); 
+	var_dump($isValid); 
 	return $isValid;
 }
 
@@ -120,8 +120,8 @@ function validateID($id)
 				}
 			}
 			
-			//var_dump($idNumber); // 檢查輸入的身份證號碼
-			//var_dump($isValid); // 檢查驗證結果
+			// var_dump($idNumber); // 檢查輸入的身份證號碼
+			// var_dump($isValid); // 檢查驗證結果
 			// echo '<pre>';
 			// print_r($_POST);
 			// echo '</pre>';
